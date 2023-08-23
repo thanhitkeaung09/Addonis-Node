@@ -1,7 +1,7 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-export default class PostsController {
+export default class TestsController {
   public async register() {
-    return await 'helo'
+    return 'registererererer'
   }
 }
