@@ -4,9 +4,10 @@ import UserFactory from './UserFactory'
 
 export default Factory.define(Profile, async ({ faker }) => {
   return {
-    full_name: faker.internet.userName(),
-    avatar_url: faker.image,
+    // userId: 1,
+    fullName: faker.internet.userName(),
+    avatarUrl: faker.image.url(),
   }
 })
-  .relation('users', () => UserFactory)
+  .relation('user', () => UserFactory)
   .build()

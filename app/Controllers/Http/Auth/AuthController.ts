@@ -51,8 +51,21 @@ export default class AuthController {
 
   public async logout({ auth, response }: HttpContextContract) {
     await auth.use('api').revoke()
-    return {
-      revoked: true,
-    }
+    response.notFound({
+      data: 'Logout Successfully',
+      message: true,
+      status: 404,
+    })
+    return
+  }
+
+  public async profile({ auth, response }: HttpContextContract) {
+    const user = await auth.user
+    await user?.load('posts')
+    return response.json({
+      data: user,
+      message: true,
+      status: 200,
+    })
   }
 }

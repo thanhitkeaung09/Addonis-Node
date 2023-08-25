@@ -18,9 +18,11 @@
 |
 */
 
-import Route from '@ioc:Adonis/Core/Route'
 import '../start/routes/app'
 import '../start/routes/auth'
+import '../start/routes/image'
+import '../start/routes/post'
+import '../start/routes/profile'
 import '../start/routes/user'
 
 // //testnig routes
